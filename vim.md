@@ -1,6 +1,5 @@
 VIM
 ========
-open vim scripts
 
 ### 初始化
 1. setup Vundle
