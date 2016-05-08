@@ -12,13 +12,20 @@ open vim scripts
 #### 1. github doc
 [Vundle](https://github.com/gmarik/Vundle.vim)
 > " Brief help
-> " :PluginList       - lists configured plugins
-> " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-> " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-> " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-> "
-> " see :h vundle for more details or wiki for FAQ
-> " Put your non-Plugin stuff after this line
+
+> > " :PluginList       - lists configured plugins
+
+> > " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+
+> > " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+
+> > " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+> > "
+
+> > " see :h vundle for more details or wiki for FAQ
+
+> > " Put your non-Plugin stuff after this line
 
 #### 2. vim version
 > mac升级了vim 到7.4(brew)
@@ -37,6 +44,7 @@ open vim scripts
 3. Tagbar
     - 函数列表插件
     - 因为mac自带的ctags程序不是exuberant ctags,所以使用时会出现问题,需要自己下载ctags编译安装到非/usr/bin 目录下
+    - [vim-scripts/Tagbar.git](https://github.com/vim-scripts/Tagbar.git)
 4. YouCompleteMe
 	- [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe.git)
 	- 比较复杂
