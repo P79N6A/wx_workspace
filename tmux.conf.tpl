@@ -1,3 +1,9 @@
+#-- base settings --#
+# 设置终端颜色为256色  
+set -g default-terminal "screen-256color"
+set -g base-index 1
+set -g pane-base-index 1
+
 # bind a reload key
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded.."
 
@@ -36,5 +42,3 @@ set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#
 # 右下角
 set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
 
-# Windows 序号从1开始
-set -g base-index 1
