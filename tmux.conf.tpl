@@ -5,3 +5,6 @@ bind r source-file ~/.tmux.conf \; display-message "Config reloaded.."
 setw -g mode-keys vi
 # start selecting text typing 'v' key (once you are in copy mode)
 bind-key -t vi-copy v begin-selection
+
+# 阻止tmux 自动改Windows 名字
+set-option -g allow-rename off
