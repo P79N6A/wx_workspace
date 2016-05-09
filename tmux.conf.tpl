@@ -35,3 +35,6 @@ set-window-option -g window-status-format '#[dim]#I:#[default]#W#[fg=grey,dim]'
 set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]'
 # 右下角
 set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+
+# Windows 序号从1开始
+set -g base-index 1
