@@ -34,3 +34,7 @@ prefix : ctrl + b<br>
     - 复制模式，使用vi移动方式(hjkl, v), conf设置
 
 
+### Tips
+1. 配色问题
+    - 有些改善，但是zsh 中每次命令输出都会带着输入的命令一起输出.
+    - refer: [解决tmux支持color 256的问题](http://www.wutianqi.com/?p=3681)
