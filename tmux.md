@@ -27,6 +27,7 @@ prefix : ctrl + b<br>
     - prefix " #类似 vim sp
     - exit #退出Pane
     - prefix o #窗格切换
+    - prefix hjkl #窗格切换(.tmux.conf设置)
 
 4. Other
     - prefix r #重载配置, conf设置
