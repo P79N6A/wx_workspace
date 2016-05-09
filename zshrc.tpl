@@ -84,4 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # 如果有中文乱码问题，设置一下LANG
-export LANG=en_US.UTF-8
+#export LANG=en_US.UTF-8
+# Force tmux to assume the terminal supports 256 colours.
+#alias tmux="tmux -2"
