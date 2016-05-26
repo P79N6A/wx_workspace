@@ -11,6 +11,7 @@ prefix : ctrl + b<br>
     - tmux ls #列出所有的会话
     - tmux a -t <目标会话名> # 链接会话
     - prefix d #退出Session
+    - prefix & #kill Session
     - prefix $ #重命名当前会话
     - prefix s #会话列表
 
