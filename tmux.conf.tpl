@@ -49,4 +49,5 @@ setw -g mouse-select-pane on
 # 开启用鼠标点击来切换活动window（点击位置是状态栏的窗口名称）
 setw -g mouse-select-window on
 # 开启window/pane里面的鼠标支持（也即可以用鼠标滚轮回滚显示窗口内容，此时还可以用鼠标选取文本）
+# 系统的拷贝缓冲，而不是 tmux的拷贝缓冲（shift + 鼠标圈选）
 setw -g mode-mouse on
