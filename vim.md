@@ -60,6 +60,11 @@ VIM
 8. vim-sensible
     - 包含了一些基本的Vim设置，大部分比较实用
     - [tpope/vim-sensible™](https://github.com/tpope/vim-sensible.git)
+9. syntastic
+    - 语法检查
+    - python 使用pylint
+    - [Syntastic和pylint的安装配置](http://astraylinux.com/2014/03/05/vim-syntastic-and-pylint/)
+    - 忽略某些错误参考 [pylint error code](http://pylint-messages.wikidot.com/messages:c0301)
 
 
 

@@ -7,6 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/Mark'
 Plugin 'vim-scripts/Tagbar'
@@ -59,3 +60,8 @@ map <F8> :silent! TagbarToggle<CR>
 set noshowmode
 let g:bufferline_echo = 1
 let g:airline#extensions#tabline#show_buffers = 1
+
+"----------- syntastic python 设置
+let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_pylint_args='--disable=C0111,R0903,W0703,E1101'
+
