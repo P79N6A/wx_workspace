@@ -61,7 +61,10 @@ set noshowmode
 let g:bufferline_echo = 1
 let g:airline#extensions#tabline#show_buffers = 1
 
-"----------- syntastic python 设置
+"----------- syntastic 设置
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers=['pylint']
 let g:syntastic_python_pylint_args='--disable=C0111,R0903,W0703,E1101'
+let g:syntastic_go_checkers=['go']
 
