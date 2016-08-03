@@ -64,7 +64,7 @@ VIM
     - 语法检查
     - python 使用pylint
     - [Syntastic和pylint的安装配置](http://astraylinux.com/2014/03/05/vim-syntastic-and-pylint/)
-    - 忽略某些错误参考 [pylint error code](http://pylint-messages.wikidot.com/messages:c0301)
+    - 忽略某些错误参考 [pylint error code](http://pylint-messages.wikidot.com/all-codes)
 
 
 
