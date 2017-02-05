@@ -34,7 +34,7 @@ VIM
 
 #### 插件列表
 1. Vundle.vim
-	- 最基础插件 vimrc中使用
+    - 最基础插件 vimrc中使用
 2. Mark:
     - 同时高亮多个单词
     - [vim-scripts/Mark](https://github.com/vim-scripts/Mark)
@@ -45,8 +45,9 @@ VIM
     - 因为mac自带的ctags程序不是exuberant ctags,所以使用时会出现问题,需要自己下载ctags编译安装到非/usr/bin 目录下
     - [vim-scripts/Tagbar.git](https://github.com/vim-scripts/Tagbar.git)
 4. YouCompleteMe
-	- [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe.git)
-	- 比较复杂
+    - [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe.git)
+    - 比较复杂
+    - py 绑定了gd, gdc, gr 三个快捷键
 5. nerdtree
     - A tree explorer plugin for vim.
     - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree.git)
@@ -67,4 +68,6 @@ VIM
     - 忽略某些错误参考 [pylint error code](http://pylint-messages.wikidot.com/all-codes)
 
 
+### shortcut
 
+- vimdiff 中使用dp (diff "put") 把一个差异点中当前文件的内容复制到另一个文件里

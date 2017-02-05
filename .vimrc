@@ -14,6 +14,8 @@ Plugin 'Rykka/riv.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -98,10 +100,14 @@ autocmd BufNewFile,BufRead *.go :set tabstop=4
 
 
 "----------- YouCompleteMe
-let g:ycm_min_num_of_chars_for_completion = 3
+"let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_autoclose_preview_window_after_completion=1
 
 autocmd BufNewFile,BufRead *.py nnoremap gd :YcmCompleter GoToDefinition<CR>
 autocmd BufNewFile,BufRead *.py nnoremap gdc :YcmCompleter GoToDeclaration <CR>
 autocmd BufNewFile,BufRead *.py nnoremap gr :YcmCompleter GoToReferences<CR>
 
+
+let g:UltiSnipsExpandTrigger="<Right>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
