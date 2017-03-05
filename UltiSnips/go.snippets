@@ -1,0 +1,136 @@
+# Snippets for Go
+
+priority 0
+
+# http get/post
+# https://github.com/beego/beedoc/blob/master/zh-CN/module/httplib.md
+snippet wx_httpget "beego httplib get" b
+r := ${1:struct}{}
+url := "${2:url}"
+req := httplib.Get(url)
+req.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
+
+err := req.ToJSON(&${3:r})
+//str, err := req.String()
+if err != nil {
+}
+endsnippet
+
+snippet wx_httppost "beego httplib post" b
+r := ${1:struct}{}
+url := "${2:url}"
+req := httplib.Post(url)
+req.Param("", "")
+req.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true})
+
+err := req.ToJSON(&${3:r})
+//str, err := req.String()
+if err != nil {
+}
+endsnippet
+
+# re
+snippet wx_re "re" b
+reg := regexp.MustCompile(`"(?P<A>.*?)"\s"(?P<B>.*?)"`)
+items := reg.FindStringSubmatch(input)
+if len(items) != 3 {
+	log.Printf("Parse failed: %s\n", input)
+}
+// input = items[0]
+// A = items[1]
+// B = items[2]
+endsnippet
+
+### Large snippets
+
+# Mysql conn: MySQL struct, init & release
+snippet wx_mysql "mysql" b
+// "database/sql"
+var dbConn *sql.DB
+
+type MySQL struct {
+	Host         string \`json:"host"\`
+	Port         string \`json:"port"\`
+	DB           string \`json:"database"\`
+	User         string \`json:"user"\`
+	Pass         string \`json:"password"\`
+	MaxOpenConns int    \`json:"max_open_conns"\`
+	MaxIdleConns int    \`json:"max_idle_conns"\`
+}
+
+func initMySQLConn(conf MySQL) {
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8",
+		conf.User,
+		conf.Pass,
+		conf.Host,
+		conf.Port,
+		conf.DB,
+	)
+	log.Printf("connect mysql %s", dsn)
+
+	dbConn, err = sql.Open("mysql", dsn)
+	if err != nil {
+		log.Fatalf("Failed to connect mysql:%s\n", err.Error())
+	}
+	if conf.MaxOpenConns == 0 {
+		conf.MaxOpenConns = 1000
+	}
+
+	if conf.MaxIdleConns == 0 {
+		conf.MaxIdleConns = 100
+	}
+
+	dbConn.SetMaxOpenConns(conf.MaxOpenConns)
+	dbConn.SetMaxIdleConns(conf.MaxIdleConns)
+}
+
+func releaseMySQLConn() {
+	dbConn.Close()
+}
+endsnippet
+
+# of style load cfg
+snippet wx_cfg "of style load cfg" b
+var (
+	ConfigFile string
+	configLock = new(sync.RWMutex)
+	config     *GlobalConfig
+)
+
+type GlobalConfig struct {
+	// TODO
+}
+
+func Config() *GlobalConfig {
+	configLock.RLock()
+	defer configLock.RUnlock()
+	return config
+}
+
+// "github.com/toolkits/file"
+func ParseConfig(cfg string) {
+	if !file.IsExist(cfg) {
+		log.Fatalln("config file:", cfg, "is not existent.")
+	}
+	log.Printf("Loading config %s ...\n", cfg)
+	ConfigFile = cfg
+
+	text, err := ioutil.ReadFile(cfg)
+	if err != nil {
+		log.Fatalln("Read config file:", cfg, "fail:", err)
+	}
+
+	var c GlobalConfig
+	err = json.Unmarshal(text, &c)
+	if err != nil {
+		log.Fatalf("Failed to load config: %s", err.Error())
+	}
+
+	configLock.Lock()
+	defer configLock.Unlock()
+
+	config = &c
+
+	log.Println("read config file:", cfg, "successfully")
+}
+endsnippet
