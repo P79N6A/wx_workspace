@@ -66,6 +66,10 @@ VIM
     - python 使用pylint
     - [Syntastic和pylint的安装配置](http://astraylinux.com/2014/03/05/vim-syntastic-and-pylint/)
     - 忽略某些错误参考 [pylint error code](http://pylint-messages.wikidot.com/all-codes)
+10. ultisnips & vim-snippets
+    - 代码片段
+    - 自己的代码, (~/.vim/UltiSnips)
+    - [syntax](https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt)
 
 
 ### shortcut
