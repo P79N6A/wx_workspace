@@ -1,0 +1,26 @@
+# Snippets for Python
+
+priority 0
+
+snippet wx_http "requests" b
+import requests
+
+url = "${1}"
+r = requests.get(url, verify=False)
+j = r.json()
+endsnippet
+
+snippet wx_mongo "pymongo" b
+from pymongo import MongoClient
+
+conn = MongoClient('${1:IP}:${2:Port}')
+database = conn['${3:DB}']
+database.authenticate("${4:User}", "${5:Pwd}")
+coll = database['${6:Collection}']
+
+## aggregate
+#rows = coll_workspace.aggregate([
+#    {"$match": {"f_type": "vcdn"}},
+#    {"$group": {"_id": "$f_symbol"}}
+#])
+endsnippet

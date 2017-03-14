@@ -22,6 +22,11 @@ UltiSnips
 2. cfg
     - of 风格ParseConfig
 
+## vim-go
+1. ff/lf
+    - fmt.Printf, log.Printf
+2. sp
+    - fmt.Sprintf
 ## TODO
 
 # Python
