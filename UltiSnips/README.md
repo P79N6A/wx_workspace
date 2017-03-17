@@ -27,9 +27,16 @@ UltiSnips
     - fmt.Printf, log.Printf
 2. sp
     - fmt.Sprintf
+
 ## TODO
 
+log init
+
 # Python
+
+## TODO
+
+time 
 
 
 

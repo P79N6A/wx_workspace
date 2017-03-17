@@ -24,3 +24,19 @@ coll = database['${6:Collection}']
 #    {"$group": {"_id": "$f_symbol"}}
 #])
 endsnippet
+
+snippet wx_log "logging basic config" b
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(filename)s:%(lineno)s - %(name)s - %(message)s"
+)
+endsnippet
+
+snippet wx_time "" b
+from datetime import datetime
+
+# ts = 1489657500
+datetime.fromtimestamp(${1:ts})
+endsnippet
