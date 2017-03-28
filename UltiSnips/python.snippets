@@ -47,9 +47,32 @@ logging.basicConfig(
 )
 endsnippet
 
-snippet wx_time "" b
+# time
+snippet wx_ts "ts -> datetime, time" b
+import time
 from datetime import datetime
 
-# ts = 1489657500
-datetime.fromtimestamp(${1:ts})
+ts = ${1:1489657500}
+dt_obj = datetime.fromtimestamp(ts)
+t_obj = time.localtime(ts)
+endsnippet
+
+snippet wx_datetime "str -> datetime -> time, str" b
+from datetime import datetime
+
+# now = datetime.now()
+date_str = ${1:"2008-11-10 17:53:59"}
+dt_obj = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+date_str = dt_obj.strftime("%Y-%m-%d %H:%M:%S")
+t_obj = dt_obj.timetuple()
+endsnippet
+
+snippet wx_time "str -> time -> datetime, str, ts" b
+import time
+
+# now = time.localtime()
+date_str = ${1:"2008-11-10 17:53:59"}
+t_obj = time.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+date_str = time.strftime("%Y-%m-%d %H:%M:%S", t_obj)
+ts = time.mktime(t_obj)
 endsnippet

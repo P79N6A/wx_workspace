@@ -37,6 +37,11 @@ set  t_ti= t_te=
 " 打开文件时，按照 viminfo 保存的上次关闭时的光标位置重新设置光标"
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" 自动跳转到粘贴文本的最后
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " 对于py文件 每行80个字符位置提示
 autocmd BufNewFile,BufRead *.py :set colorcolumn=100
 " 对于py文件 tab, 行尾空 特殊字符提示
@@ -111,3 +116,4 @@ autocmd BufNewFile,BufRead *.py nnoremap gr :YcmCompleter GoToReferences<CR>
 let g:UltiSnipsExpandTrigger="<Right>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+

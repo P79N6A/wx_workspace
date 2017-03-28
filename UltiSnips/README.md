@@ -34,9 +34,17 @@ log init
 
 # Python
 
+## Smart
+1. requests/http
+2. log
+3. ts/datetime/time
+
+## Large
+1. mysql
+2. mongo
+
 ## TODO
 
-time 
 click
 
 
