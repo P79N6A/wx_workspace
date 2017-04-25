@@ -5,6 +5,8 @@ priority 0
 # http get/post
 # https://github.com/beego/beedoc/blob/master/zh-CN/module/httplib.md
 snippet wx_httpget "beego httplib get" b
+// "github.com/astaxie/beego/httplib"
+// "crypto/tls"
 r := ${1:struct}{}
 url := "${2:url}"
 req := httplib.Get(url)
