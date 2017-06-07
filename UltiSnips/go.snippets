@@ -19,6 +19,8 @@ if err != nil {
 endsnippet
 
 snippet wx_httppost "beego httplib post" b
+// "github.com/astaxie/beego/httplib"
+// "crypto/tls"
 r := ${1:struct}{}
 url := "${2:url}"
 req := httplib.Post(url)
