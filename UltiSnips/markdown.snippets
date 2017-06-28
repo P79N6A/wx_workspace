@@ -1,0 +1,57 @@
+# Snippets for MD
+
+priority 0
+
+
+snippet wx_rest_doc "" b
+
+    ${1:POST} /api/v1/${2}
+
+**URL 参数说明**
+
+| 名称      | 说明         |
+|-----------|--------------|
+| page_size | 分页限制条数 |
+| page      | 分页开始页码 |
+
+**BODY 数据说明**
+
+| 名称      | 说明         |
+|-----------|--------------|
+| page_size | 分页限制条数 |
+| page      | 分页开始页码 |
+
+**请求示例**
+
+    $1: /api/v1/$2
+    Content-Type: application/json;charset=UTF-8
+
+    Data:
+    {}
+
+**请求响应字段说明**
+
+| 字段      | 说明               |
+|-----------|--------------------|
+| code      | 1: 成功; 0: 失败   |
+| message   | 错误时包含错误信息 |
+| data      | 返回数据           |
+| page_size | 分页限制条数       |
+| page      | 分页开始页码       |
+| total     | 数据总量           |
+
+**正确返回示例**
+
+    {
+        "code": 1,
+        "message": ""
+    }
+
+**错误返回示例**
+
+    {
+        "code": 0,
+        "message": "Verify() return false"
+    }
+
+endsnippet

@@ -15,6 +15,10 @@ snippet wx_url_gerrit "" b
 \`#GER$1 <http://sys.qiyi.domain/gerrit/#/c/${1}>\`_
 endsnippet
 
+snippet wx_url_gitlab "" b
+\`#MR$1 <http://gitlab.qiyi.domain/${2:fast}/${3:server}/merge_requests/${1}>\`_
+endsnippet
+
 snippet wx_week "" b
 ########
 ${1:20YYMMDD}
@@ -34,5 +38,40 @@ ${1:20YYMMDD}
 
 下周计划
 --------
+
+endsnippet
+
+snippet wx_rest_doc "" b
+
+$1
+~~~
+
+info
+
+**参数**
+
+:p1: xxx
+:page_size: 分页限制条数
+:page: 分页开始页码
+
+**请求示例**
+
+::
+
+    GET: $1
+
+**返回示例**
+
+正确示例
+
+::
+
+    {}
+
+错误示例
+
+::
+
+    {}
 
 endsnippet
