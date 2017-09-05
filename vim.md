@@ -75,3 +75,7 @@ VIM
 ### shortcut
 
 - vimdiff 中使用dp (diff "put") 把一个差异点中当前文件的内容复制到另一个文件里
+
+### QA
+
+syntastic 不好用, rst 安装 Sphinx, 通过SyntasticInfo 查看
