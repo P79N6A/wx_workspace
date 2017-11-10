@@ -78,4 +78,7 @@ VIM
 
 ### QA
 
-syntastic 不好用, rst 安装 Sphinx, 通过SyntasticInfo 查看
+syntastic 不好用
+
+1. rst 安装 Sphinx, 通过SyntasticInfo 查看
+1. python 安装pylint

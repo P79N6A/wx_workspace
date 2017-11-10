@@ -33,7 +33,7 @@ prefix : ctrl + b<br>
 4. Other
     - prefix r #重载配置, conf设置
     - prefix [ #进入复制模式，在复制模式中 q 即可退出
-    - 复制模式，使用vi移动方式(hjkl, v, y), conf设置
+    - 复制模式，使用vi移动方式(hjkl, v, enter), conf设置
     - prefix ] #上面复制的内容粘贴
 
 

@@ -19,6 +19,7 @@ cnx = mysql.connector.connect(user='${1:user}', password='${2:pwd}',
 cursor = cnx.cursor()
 # query = "SELECT * FROM xx WHERE x = %s AND y = %s"
 # cursor.execute(query, (x, y))
+# rows = cursor.fetchall()
 # cursor.close()
 # cnx.close()
 endsnippet
@@ -75,4 +76,12 @@ date_str = ${1:"2008-11-10 17:53:59"}
 t_obj = time.strptime(date_str, "%Y-%m-%d %H:%M:%S")
 date_str = time.strftime("%Y-%m-%d %H:%M:%S", t_obj)
 ts = time.mktime(t_obj)
+endsnippet
+
+snippet wx_dateutil "rrule" b
+# https://dateutil.readthedocs.io
+from datetime import datetime
+from dateutil.rrule import rrule, MONTHLY
+start_date = datetime(2014, 12, 31)
+list(rrule(freq=MONTHLY, count=4, dtstart=start_date))
 endsnippet
