@@ -4,8 +4,12 @@ priority 0
 
 snippet wx_http "requests" b
 import requests
+import urllib3
+
+urllib3.disable_warnings()
 
 url = "${1}"
+# https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
 r = requests.get(url, verify=False)
 j = r.json()
 endsnippet
