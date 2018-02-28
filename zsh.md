@@ -1,6 +1,14 @@
 OH-MY-ZSH
 ========
 
+<!-- vim-markdown-toc GFM -->
+* [ref github](#ref-github)
+* [tips](#tips)
+* [插件](#插件)
+* [zsh load bash_completion](#zsh-load-bash_completion)
+
+<!-- vim-markdown-toc -->
+
 ### ref github
 1. [robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
@@ -21,4 +29,17 @@ OH-MY-ZSH
     - j xxx(xxx 目录名字)
 
 
+### zsh load bash_completion
 
+command not found : complete when using bash 
+
+``` sh
+# zsh have a bash completion script compatibility mode, you need to run :
+
+autoload bashcompinit
+bashcompinit
+
+# https://github.com/eddiezane/lunchy/issues/57
+```
+
+1. [zsh 补全](https://segmentfault.com/a/1190000002994217)

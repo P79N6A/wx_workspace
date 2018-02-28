@@ -7,6 +7,7 @@ wx_workspace
 * [mycli](#mycli)
 * [tldr](#tldr)
 * [ncdu](#ncdu)
+* [glances](#glances)
 
 <!-- vim-markdown-toc -->
 
@@ -32,3 +33,14 @@ Too long, Don't read `pip install tldr`
 # ncdu
 
 更好看的du `yum install ncdu`
+
+# glances
+
+ENTER: filter
+a: Sort process list automatically
+c: Sort processes by CPU usage
+i: Sort processes by I/O rate
+m: Sort processes by MEM usage
+p: Sort processes by name
+
+http://glances.readthedocs.io/en/latest/cmds.html
