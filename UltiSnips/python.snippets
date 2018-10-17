@@ -19,13 +19,14 @@ import mysql.connector
 
 cnx = mysql.connector.connect(user='${1:user}', password='${2:pwd}',
                               host='${3:host}', port='${4:3306}',
-                              database='${5:db}')
+                              database='${5:db}', buffered=True)
 cursor = cnx.cursor()
 # query = "SELECT * FROM xx WHERE x = %s AND y = %s"
 # cursor.execute(query, (x, y))
 # rows = cursor.fetchall()
 # cursor.close()
 # cnx.close()
+# buffered: https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursorbuffered.html
 endsnippet
 
 snippet wx_mongo "pymongo" b
@@ -88,4 +89,8 @@ from datetime import datetime
 from dateutil.rrule import rrule, MONTHLY
 start_date = datetime(2014, 12, 31)
 list(rrule(freq=MONTHLY, count=4, dtstart=start_date))
+endsnippet
+
+snippet wx_pylint "disable remark" b
+# pylint: disable=too-many-instance-attributes
 endsnippet
