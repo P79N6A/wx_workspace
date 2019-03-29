@@ -32,6 +32,7 @@ endsnippet
 snippet wx_mongo "pymongo" b
 from pymongo import MongoClient
 
+#conn = MongoClient(uri)
 conn = MongoClient('${1:IP}:${2:Port}')
 database = conn['${3:DB}']
 database.authenticate("${4:User}", "${5:Pwd}")

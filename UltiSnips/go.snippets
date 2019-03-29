@@ -33,6 +33,22 @@ if err != nil {
 }
 endsnippet
 
+# int int64 string
+snippet wx_int "int, int64, string" b
+int, err := strconv.Atoi(string)
+int64, err := strconv.ParseInt(string, 10, 64)
+string := strconv.Itoa(int)
+string := strconv.FormatInt(int64,10)
+endsnippet
+
+# int int64 string
+snippet wx_atomic "add load swap" b
+var c int64
+atomic.AddInt64(&c, 1)
+v := atomic.SwapInt64(&c, 0)
+v := atomic.LoadInt64(&c)
+endsnippet
+
 # re
 snippet wx_re "re" b
 reg := regexp.MustCompile(`"(?P<A>.*?)"\s"(?P<B>.*?)"`)
