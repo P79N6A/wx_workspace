@@ -3,20 +3,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-" add plugin
+Plugin 'Rykka/riv.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 "Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/Mark'
 Plugin 'vim-scripts/Tagbar'
 Plugin 'bling/vim-airline'
-Plugin 'Rykka/riv.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'fatih/vim-go'
-Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mzlogin/vim-markdown-toc'
 call vundle#end()
 filetype plugin indent on
 
@@ -42,7 +42,7 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-" 对于py文件 每行80个字符位置提示
+" 对于py文件 每行100个字符位置提示
 autocmd BufNewFile,BufRead *.py :set colorcolumn=100
 " 对于py文件 tab, 行尾空 特殊字符提示
 autocmd BufNewFile,BufRead *.py :set listchars=tab:->,trail:-,extends:#,nbsp:-
@@ -83,7 +83,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers=['pylint']
 let g:syntastic_python_pylint_args='--disable=C0111,R0903,W0703,E1101,C0103,C0301'
-let g:syntastic_go_checkers=['go']
+let g:syntastic_go_checkers=['go', 'golint']
 
 "----------- vim-go
 autocmd BufNewFile,BufRead *.go :set filetype=go
@@ -96,12 +96,15 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-"let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 let g:rehash256 = 1
+let g:go_metalinter_deadline = "30s"
 "let g:molokai_original = 1
 
 autocmd BufNewFile,BufRead *.go :set colorcolumn=100
 autocmd BufNewFile,BufRead *.go :set tabstop=4
+
+autocmd BufNewFile,BufRead *.md :set filetype=markdown
 
 
 "----------- YouCompleteMe
@@ -117,3 +120,10 @@ let g:UltiSnipsExpandTrigger="<Right>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+"----------- markdown
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_autowrite = 1
+nmap ft :TableFormat<CR>
+nmap gtg :GenTocGFM<CR>
